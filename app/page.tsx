@@ -1,65 +1,116 @@
-import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Section, SectionHeading } from "@/components/shared/section";
+import { getAllNews, getAllTeams } from "@/lib/content";
+import Link from "next/link";
 
-export default function Home() {
+export default async function HomePage() {
+  const [teams, news] = await Promise.all([getAllTeams(), getAllNews()]);
+  const latestNews = news.slice(0, 3);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <section className="relative isolate overflow-hidden bg-primary text-primary-foreground">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary via-primary to-primary/80" />
+        <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
+          <p className="font-display text-xs font-bold uppercase tracking-[0.22em] text-accent">
+            TJ Šumperk Basketbal
           </p>
+          <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            Basketbal v Šumperku – od přípravky po dospělé.
+          </h1>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/85 sm:text-lg">
+            Rozvíjíme děti i dospělé, hrajeme krajské i ligové soutěže. Přidej
+            se k nám – chceš umět hrát basketbal? Kontaktuj nás.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Button href="/kontakty" variant="accent" size="lg">
+              Kontaktuj nás
+            </Button>
+            <Button href="/tymy" variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              Naše týmy
+            </Button>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </section>
+
+      <Section>
+        <SectionHeading
+          eyebrow="Aktuality"
+          title="Aktuální dění v oddílu"
+          description="Sledujte nejnovější informace o trénincích, soutěžích a kempech."
+        />
+        {latestNews.length === 0 ? (
+          <p className="text-muted-foreground">Zatím nejsou žádné aktuality.</p>
+        ) : (
+          <ul className="grid gap-6 md:grid-cols-3">
+            {latestNews.map(({ frontmatter }) => (
+              <li
+                key={frontmatter.slug}
+                className="group rounded-xl border border-border bg-background p-6 transition-shadow hover:shadow-md"
+              >
+                <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                  {new Date(frontmatter.date).toLocaleDateString("cs-CZ")}
+                </p>
+                <h3 className="mt-2 font-display text-lg font-bold leading-snug text-foreground">
+                  <Link
+                    href={`/aktuality/${frontmatter.slug}`}
+                    className="hover:text-primary"
+                  >
+                    {frontmatter.title}
+                  </Link>
+                </h3>
+                {frontmatter.excerpt ? (
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    {frontmatter.excerpt}
+                  </p>
+                ) : null}
+              </li>
+            ))}
+          </ul>
+        )}
+        <div className="mt-10">
+          <Link
+            href="/aktuality"
+            className="inline-flex items-center gap-1 font-display text-sm font-semibold uppercase tracking-wide text-primary hover:underline"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Všechny aktuality <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
-      </main>
-    </div>
+      </Section>
+
+      <Section className="bg-muted">
+        <SectionHeading
+          eyebrow="Hráčské kategorie"
+          title="Naše týmy"
+          description="Tréninky pro všechny věkové kategorie – od přípravky po dospělé."
+        />
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {teams.map(({ frontmatter }) => (
+            <li key={frontmatter.slug}>
+              <Link
+                href={`/tymy/${frontmatter.slug}`}
+                className="block h-full rounded-xl border border-border bg-background p-5 transition-all hover:-translate-y-0.5 hover:border-primary hover:shadow-md"
+              >
+                <p className="text-xs uppercase tracking-wide text-accent">
+                  {frontmatter.ageRange}
+                </p>
+                <h3 className="mt-2 font-display text-base font-bold text-foreground">
+                  {frontmatter.name}
+                </h3>
+                {frontmatter.shortDescription ? (
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    {frontmatter.shortDescription}
+                  </p>
+                ) : null}
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                  Více informací <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Section>
+    </>
   );
 }

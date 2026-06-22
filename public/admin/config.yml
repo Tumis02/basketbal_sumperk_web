@@ -1,0 +1,117 @@
+# Decap CMS – konfigurace
+# Dokumentace: https://decapcms.org/docs/
+
+backend:
+  name: github
+  repo: Tumis02/basketbal_sumperk_web
+  branch: main
+  base_url: https://api.netlify.com   # použijeme Netlify Identity / OAuth proxy
+  # Případně lze přejít na Netlify Identity + git-gateway
+
+# Pro lokální vývoj spusťte: npx decap-server (a tento blok odkomentujte)
+# local_backend: true
+
+media_folder: public/uploads
+public_folder: /uploads
+
+locale: cs
+
+site_url: https://basketbalsumperk.cz
+display_url: https://basketbalsumperk.cz
+logo_url: /favicon.ico
+
+collections:
+  - name: news
+    label: Aktuality
+    label_singular: Aktualita
+    folder: content/news
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    summary: "{{title}} – {{date}}"
+    fields:
+      - { name: title, label: Titulek, widget: string }
+      - { name: date, label: Datum, widget: datetime, time_format: false, format: "YYYY-MM-DD" }
+      - { name: excerpt, label: Krátký popis, widget: text, required: false }
+      - { name: cover, label: Náhledový obrázek, widget: image, required: false }
+      - { name: published, label: Publikováno, widget: boolean, default: true }
+      - { name: body, label: Obsah, widget: markdown }
+
+  - name: teams
+    label: Týmy
+    label_singular: Tým
+    folder: content/teams
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    identifier_field: name
+    fields:
+      - { name: name, label: Název kategorie, widget: string }
+      - { name: ageRange, label: Věkové rozmezí, widget: string, required: false }
+      - { name: order, label: Pořadí, widget: number, default: 99, value_type: int }
+      - { name: shortDescription, label: Krátký popis, widget: text, required: false }
+      - { name: hero, label: Hero obrázek, widget: image, required: false }
+      - name: coaches
+        label: Trenéři (slugy)
+        widget: list
+        required: false
+        field: { name: slug, label: Slug trenéra, widget: string }
+      - name: trainingDays
+        label: Tréninkové dny
+        widget: list
+        required: false
+        field: { name: day, label: Den, widget: string }
+      - { name: body, label: Popis kategorie, widget: markdown }
+
+  - name: coaches
+    label: Trenéři
+    label_singular: Trenér
+    folder: content/coaches
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    identifier_field: name
+    fields:
+      - { name: name, label: Jméno, widget: string }
+      - { name: role, label: Role, widget: string, required: false }
+      - { name: email, label: E-mail, widget: string, required: false }
+      - { name: phone, label: Telefon, widget: string, required: false }
+      - { name: photo, label: Foto, widget: image, required: false }
+      - { name: body, label: Životopis, widget: markdown, required: false }
+
+  - name: sponsors
+    label: Sponzoři
+    label_singular: Sponzor
+    folder: content/sponsors
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    identifier_field: name
+    fields:
+      - { name: name, label: Název, widget: string }
+      - { name: url, label: Odkaz, widget: string, required: false }
+      - { name: logo, label: Logo, widget: image, required: false }
+      - { name: order, label: Pořadí, widget: number, default: 99, value_type: int }
+
+  - name: camps
+    label: Kempy
+    label_singular: Kemp
+    folder: content/camps
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { name: title, label: Název, widget: string }
+      - { name: year, label: Rok, widget: number, value_type: int }
+      - { name: type, label: Typ, widget: select, options: ["letni", "primestsky"] }
+      - { name: dateFrom, label: Od, widget: datetime, time_format: false, format: "YYYY-MM-DD", required: false }
+      - { name: dateTo, label: Do, widget: datetime, time_format: false, format: "YYYY-MM-DD", required: false }
+      - { name: location, label: Místo, widget: string, required: false }
+      - { name: price, label: Cena, widget: string, required: false }
+      - { name: cover, label: Náhled, widget: image, required: false }
+      - { name: body, label: Detail, widget: markdown }
