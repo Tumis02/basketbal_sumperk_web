@@ -80,6 +80,67 @@ export default async function HomePage() {
       </Section>
 
       <Section className="bg-muted">
+        <div className="grid gap-10 lg:grid-cols-2">
+          <div>
+            <p className="mb-3 font-display text-xs font-bold uppercase tracking-[0.18em] text-accent">
+              Aktuální dění
+            </p>
+            <h2 className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
+              Co se právě děje v oddílu
+            </h2>
+            <div className="mt-5 space-y-4 text-base leading-relaxed text-muted-foreground">
+              <p>
+                Úspěšně jsme ukončili letní basketbalový kemp, který přinesl
+                spoustu skvělých zážitků a sportovních úspěchů. V nejbližší
+                době se můžete těšit na příměstský kemp, který proběhne
+                25.–29. 8. 2025.
+              </p>
+              <p>
+                4. září se koná akce <strong>Sportuj v Šumperku</strong>,
+                v rámci které proběhne nábor nových hráčů. Všichni zájemci
+                o basketbal jsou srdečně vítáni!
+              </p>
+              <p>
+                Od 1. září startují tréninky dle rozpisu, takže je ideální
+                čas připojit se k naší basketbalové rodině a začít novou
+                sezónu plnou energie a sportovních výzev.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <p className="mb-3 font-display text-xs font-bold uppercase tracking-[0.18em] text-accent">
+              Shrnutí sezóny 2024/2025
+            </p>
+            <h2 className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
+              Ohlédnutí za uplynulou sezónou
+            </h2>
+            <div className="mt-5 space-y-4 text-base leading-relaxed text-muted-foreground">
+              <p>
+                Uplynulá sezóna byla pro náš klub velmi úspěšná a plná
+                skvělých momentů. Naše týmy se účastnily několika soutěží
+                a v každé z nich předvedly bojovné výkony. Nejmladší tým
+                U11 mix se účastnil Středomoravského přeboru, kde sbíral
+                první cenné zkušenosti a ukázal velký potenciál do budoucna.
+              </p>
+              <p>
+                V kategoriích U15 dívky, U15 chlapci, U17, U19 a muži jsme
+                byli pravidelně vidět v ligových a oblastních soutěžích.
+                Každý tým ukázal velké odhodlání, bojovnost a chuť se
+                zlepšovat, což se projevilo i na výsledcích v tabulkách.
+              </p>
+              <p>
+                Máme velkou radost z toho, že se nám daří udržovat širokou
+                základnu v přípravce. Děkujeme všem hráčům, rodičům
+                a trenérům za podporu a těšíme se na další společné
+                basketbalové zážitky v nové sezóně!
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section>
         <SectionHeading
           eyebrow="Hráčské kategorie"
           title="Naše týmy"

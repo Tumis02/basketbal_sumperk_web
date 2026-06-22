@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FacebookIcon, InstagramIcon } from "@/components/shared/icons";
+import { CLUB } from "@/lib/contacts";
 import { NAV, SITE } from "@/lib/site";
 
 export function SiteFooter() {
@@ -61,10 +62,19 @@ export function SiteFooter() {
           <p className="font-display text-sm font-bold uppercase tracking-wide">
             Kontakt
           </p>
-          <address className="mt-4 not-italic text-sm text-primary-foreground/85">
-            TJ Šumperk – oddíl basketbalu
+          <address className="mt-4 not-italic text-sm leading-relaxed text-primary-foreground/85">
+            {CLUB.legalName} – {CLUB.department}
             <br />
-            Šumperk, Česká republika
+            {CLUB.street}
+            <br />
+            {CLUB.postalCode} {CLUB.city}
+            <br />
+            <a
+              href={`mailto:${CLUB.email}`}
+              className="hover:underline"
+            >
+              {CLUB.email}
+            </a>
           </address>
           <Link
             href="/kontakty"
