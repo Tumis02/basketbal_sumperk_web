@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CalendarDays, ImageIcon, MapPin, Phone, UserRound } from "lucide-react";
@@ -60,10 +61,10 @@ export default async function TymDetailPage({ params }: Props) {
             <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
               {frontmatter.name}
             </h1>
-            {frontmatter.shortDescription ? (
-              <p className="mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">
-                {frontmatter.shortDescription}
-              </p>
+            {content.trim() ? (
+              <div className="mt-6 max-w-2xl whitespace-pre-line text-base leading-relaxed text-foreground sm:text-lg">
+                {content.trim()}
+              </div>
             ) : null}
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href="/treninky">Celý rozpis tréninků</Button>
@@ -72,23 +73,30 @@ export default async function TymDetailPage({ params }: Props) {
               </Button>
             </div>
           </div>
-          <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-dashed border-border bg-background text-muted-foreground/60">
-            <div className="flex flex-col items-center gap-2 text-center">
-              <ImageIcon className="h-12 w-12" aria-hidden />
-              <p className="text-sm font-medium">Fotka týmu bude doplněna</p>
+          {frontmatter.hero ? (
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border bg-background shadow-sm">
+              <Image
+                src={frontmatter.hero}
+                alt={frontmatter.name}
+                fill
+                priority
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
+              />
             </div>
-          </div>
+          ) : (
+            <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-dashed border-border bg-background text-muted-foreground/60">
+              <div className="flex flex-col items-center gap-2 text-center">
+                <ImageIcon className="h-12 w-12" aria-hidden />
+                <p className="text-sm font-medium">Fotka týmu bude doplněna</p>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
-      <Section containerClassName="max-w-3xl">
-        <div className="prose prose-neutral max-w-none whitespace-pre-line text-base leading-relaxed text-foreground">
-          {content.trim()}
-        </div>
-      </Section>
-
       {trainings.length > 0 ? (
-        <Section className="bg-muted">
+        <Section>
           <SectionHeading
             eyebrow="Sezóna 2025/2026"
             title="Rozpis tréninků"
@@ -131,7 +139,7 @@ export default async function TymDetailPage({ params }: Props) {
       ) : null}
 
       {coaches.length > 0 ? (
-        <Section>
+        <Section className="bg-muted">
           <SectionHeading
             eyebrow="Trenérský tým"
             title="Trenéři kategorie"

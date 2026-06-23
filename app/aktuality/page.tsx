@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { Section, SectionHeading } from "@/components/shared/section";
 import { getAllNews } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
+import { truncate } from "@/lib/utils";
 
 export const metadata = pageMetadata({
   title: "Aktuality",
@@ -23,29 +25,38 @@ export default async function AktualityPage() {
         <p className="text-muted-foreground">Zatím žádné aktuality.</p>
       ) : (
         <ul className="space-y-6">
-          {news.map(({ frontmatter }) => (
-            <li
-              key={frontmatter.slug}
-              className="rounded-xl border border-border bg-background p-6 transition-shadow hover:shadow-md"
-            >
-              <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                {new Date(frontmatter.date).toLocaleDateString("cs-CZ")}
-              </p>
-              <h2 className="mt-2 font-display text-xl font-bold text-foreground">
+          {news.map(({ frontmatter, content }) => {
+            const preview = truncate(frontmatter.excerpt ?? content, 240);
+            return (
+              <li
+                key={frontmatter.slug}
+                className="rounded-xl border border-border bg-background p-6 transition-shadow hover:shadow-md"
+              >
+                <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                  {new Date(frontmatter.date).toLocaleDateString("cs-CZ")}
+                </p>
+                <h2 className="mt-2 font-display text-xl font-bold text-foreground">
+                  <Link
+                    href={`/aktuality/${frontmatter.slug}`}
+                    className="hover:text-primary"
+                  >
+                    {frontmatter.title}
+                  </Link>
+                </h2>
+                {preview ? (
+                  <p className="mt-3 text-base text-muted-foreground">
+                    {preview}
+                  </p>
+                ) : null}
                 <Link
                   href={`/aktuality/${frontmatter.slug}`}
-                  className="hover:text-primary"
+                  className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline"
                 >
-                  {frontmatter.title}
+                  Číst více <ArrowRight className="h-4 w-4" />
                 </Link>
-              </h2>
-              {frontmatter.excerpt ? (
-                <p className="mt-3 text-base text-muted-foreground">
-                  {frontmatter.excerpt}
-                </p>
-              ) : null}
-            </li>
-          ))}
+              </li>
+            );
+          })}
         </ul>
       )}
     </Section>

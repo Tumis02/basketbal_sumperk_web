@@ -30,13 +30,17 @@ export const TEAMS: NavItem[] = [
   { label: "Muži", href: "/tymy/muzi" },
 ];
 
+export const CAMPS: NavItem[] = [
+  { label: "Kemp 2026", href: "/kemp-2026" },
+  { label: "Příměstský kemp", href: "/primestsky-kemp" },
+];
+
 export const NAV: NavItem[] = [
   { label: "Domů", href: "/" },
   { label: "Týmy", href: "/tymy", children: TEAMS },
   { label: "Tréninky", href: "/treninky" },
   { label: "Aktuality", href: "/aktuality" },
   { label: "Fotogalerie", href: "/fotogalerie" },
+  { label: "Kempy", href: "/kemp-2026", children: CAMPS },
   { label: "Kontakty", href: "/kontakty" },
-  { label: "Kemp 2026", href: "/kemp-2026" },
-  { label: "Příměstský kemp", href: "/primestsky-kemp" },
 ];

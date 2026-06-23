@@ -1,7 +1,10 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeading } from "@/components/shared/section";
 import { getAllNews, getAllTeams } from "@/lib/content";
+import { SPONSORS } from "@/lib/sponsors";
+import { truncate } from "@/lib/utils";
 import Link from "next/link";
 
 export default async function HomePage() {
@@ -44,29 +47,38 @@ export default async function HomePage() {
           <p className="text-muted-foreground">Zatím nejsou žádné aktuality.</p>
         ) : (
           <ul className="grid gap-6 md:grid-cols-3">
-            {latestNews.map(({ frontmatter }) => (
-              <li
-                key={frontmatter.slug}
-                className="group rounded-xl border border-border bg-background p-6 transition-shadow hover:shadow-md"
-              >
-                <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                  {new Date(frontmatter.date).toLocaleDateString("cs-CZ")}
-                </p>
-                <h3 className="mt-2 font-display text-lg font-bold leading-snug text-foreground">
+            {latestNews.map(({ frontmatter, content }) => {
+              const preview = truncate(frontmatter.excerpt ?? content, 160);
+              return (
+                <li
+                  key={frontmatter.slug}
+                  className="group flex flex-col rounded-xl border border-border bg-background p-6 transition-shadow hover:shadow-md"
+                >
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                    {new Date(frontmatter.date).toLocaleDateString("cs-CZ")}
+                  </p>
+                  <h3 className="mt-2 font-display text-lg font-bold leading-snug text-foreground">
+                    <Link
+                      href={`/aktuality/${frontmatter.slug}`}
+                      className="hover:text-primary"
+                    >
+                      {frontmatter.title}
+                    </Link>
+                  </h3>
+                  {preview ? (
+                    <p className="mt-3 text-sm text-muted-foreground">
+                      {preview}
+                    </p>
+                  ) : null}
                   <Link
                     href={`/aktuality/${frontmatter.slug}`}
-                    className="hover:text-primary"
+                    className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline"
                   >
-                    {frontmatter.title}
+                    Číst více <ArrowRight className="h-4 w-4" />
                   </Link>
-                </h3>
-                {frontmatter.excerpt ? (
-                  <p className="mt-3 text-sm text-muted-foreground">
-                    {frontmatter.excerpt}
-                  </p>
-                ) : null}
-              </li>
-            ))}
+                </li>
+              );
+            })}
           </ul>
         )}
         <div className="mt-10">
@@ -80,67 +92,6 @@ export default async function HomePage() {
       </Section>
 
       <Section className="bg-muted">
-        <div className="grid gap-10 lg:grid-cols-2">
-          <div>
-            <p className="mb-3 font-display text-xs font-bold uppercase tracking-[0.18em] text-accent">
-              Aktuální dění
-            </p>
-            <h2 className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
-              Co se právě děje v oddílu
-            </h2>
-            <div className="mt-5 space-y-4 text-base leading-relaxed text-muted-foreground">
-              <p>
-                Úspěšně jsme ukončili letní basketbalový kemp, který přinesl
-                spoustu skvělých zážitků a sportovních úspěchů. V nejbližší
-                době se můžete těšit na příměstský kemp, který proběhne
-                25.–29. 8. 2025.
-              </p>
-              <p>
-                4. září se koná akce <strong>Sportuj v Šumperku</strong>,
-                v rámci které proběhne nábor nových hráčů. Všichni zájemci
-                o basketbal jsou srdečně vítáni!
-              </p>
-              <p>
-                Od 1. září startují tréninky dle rozpisu, takže je ideální
-                čas připojit se k naší basketbalové rodině a začít novou
-                sezónu plnou energie a sportovních výzev.
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <p className="mb-3 font-display text-xs font-bold uppercase tracking-[0.18em] text-accent">
-              Shrnutí sezóny 2024/2025
-            </p>
-            <h2 className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
-              Ohlédnutí za uplynulou sezónou
-            </h2>
-            <div className="mt-5 space-y-4 text-base leading-relaxed text-muted-foreground">
-              <p>
-                Uplynulá sezóna byla pro náš klub velmi úspěšná a plná
-                skvělých momentů. Naše týmy se účastnily několika soutěží
-                a v každé z nich předvedly bojovné výkony. Nejmladší tým
-                U11 mix se účastnil Středomoravského přeboru, kde sbíral
-                první cenné zkušenosti a ukázal velký potenciál do budoucna.
-              </p>
-              <p>
-                V kategoriích U15 dívky, U15 chlapci, U17, U19 a muži jsme
-                byli pravidelně vidět v ligových a oblastních soutěžích.
-                Každý tým ukázal velké odhodlání, bojovnost a chuť se
-                zlepšovat, což se projevilo i na výsledcích v tabulkách.
-              </p>
-              <p>
-                Máme velkou radost z toho, že se nám daří udržovat širokou
-                základnu v přípravce. Děkujeme všem hráčům, rodičům
-                a trenérům za podporu a těšíme se na další společné
-                basketbalové zážitky v nové sezóně!
-              </p>
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      <Section>
         <SectionHeading
           eyebrow="Hráčské kategorie"
           title="Naše týmy"
@@ -172,6 +123,48 @@ export default async function HomePage() {
           ))}
         </ul>
       </Section>
+
+      {SPONSORS.length > 0 ? (
+        <Section>
+          <SectionHeading
+            eyebrow="Děkujeme za podporu"
+            title="Naši sponzoři"
+            description="Bez podpory partnerů by basketbal v Šumperku nebyl možný. Děkujeme!"
+          />
+          <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+            {SPONSORS.map((sponsor) => {
+              const content = (
+                <div className="relative flex h-24 w-full items-center justify-center rounded-xl border border-border bg-background p-4 transition-all hover:-translate-y-0.5 hover:border-primary hover:shadow-md">
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    fill
+                    sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
+                    className="object-contain p-3"
+                  />
+                </div>
+              );
+              return (
+                <li key={sponsor.name}>
+                  {sponsor.url ? (
+                    <a
+                      href={sponsor.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={sponsor.name}
+                      className="block"
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    <div aria-label={sponsor.name}>{content}</div>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </Section>
+      ) : null}
     </>
   );
 }
