@@ -1,5 +1,6 @@
 import { MapPin } from "lucide-react";
 import { Section, SectionHeading } from "@/components/shared/section";
+import { HallOccupancyImage } from "@/components/treninky/hall-occupancy-image";
 import { pageMetadata } from "@/lib/seo";
 import { HALLS, SCHEDULE, type HallKey } from "@/lib/training-schedule";
 
@@ -85,7 +86,7 @@ export default function TreninkyPage() {
         <SectionHeading
           eyebrow="Harmonogramy hal"
           title="Obsazenost hal"
-          description="Detailní harmonogramy obsazenosti jednotlivých hal budou doplněny obrázky."
+          description="Kliknutím na harmonogram zobrazíte detailní obsazenost haly ve větším formátu."
         />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {(Object.keys(HALLS) as HallKey[]).map((key) => {
@@ -104,9 +105,16 @@ export default function TreninkyPage() {
                     {hall.address}
                   </p>
                 ) : null}
-                <div className="mt-4 flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-border bg-muted/40 text-center text-sm text-muted-foreground">
-                  Harmonogram bude doplněn
-                </div>
+                {hall.occupancyImage ? (
+                  <HallOccupancyImage
+                    src={hall.occupancyImage}
+                    alt={`Obsazenost – ${hall.name}`}
+                  />
+                ) : (
+                  <div className="mt-4 flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-border bg-muted/40 text-center text-sm text-muted-foreground">
+                    Harmonogram bude doplněn
+                  </div>
+                )}
               </div>
             );
           })}

@@ -5,6 +5,7 @@ export type Hall = {
   name: string;
   shortName: string;
   address?: string;
+  occupancyImage?: string;
 };
 
 export const HALLS: Record<HallKey, Hall> = {
@@ -13,18 +14,21 @@ export const HALLS: Record<HallKey, Hall> = {
     name: "Tyršův stadion",
     shortName: "Tyršův stadion",
     address: "Žerotínova 55, Šumperk",
+    occupancyImage: "/treninky_25-26_.jpg"
   },
   zs1: {
     key: "zs1",
     name: "1. ZŠ Šumperk",
     shortName: "1. ZŠ",
     address: "Dr. E. Beneše 1, Šumperk",
+    occupancyImage: "/treninky_25-26_1_zs.jpg"
   },
   zs5: {
     key: "zs5",
     name: "5. ZŠ Šumperk",
     shortName: "5. ZŠ",
     address: "Sluneční 38, Šumperk",
+    occupancyImage: "/treninky_5zs_2025-2026_.jpg"
   },
 };
 
