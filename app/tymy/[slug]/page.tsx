@@ -67,7 +67,6 @@ export default async function TymDetailPage({ params }: Props) {
               </div>
             ) : null}
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="/treninky">Celý rozpis tréninků</Button>
               <Button href="/kontakty" variant="outline">
                 Kontakty
               </Button>
@@ -97,11 +96,15 @@ export default async function TymDetailPage({ params }: Props) {
 
       {trainings.length > 0 ? (
         <Section>
-          <SectionHeading
-            eyebrow="Sezóna 2025/2026"
-            title="Rozpis tréninků"
-            description="Pravidelný týdenní rozpis tréninků této kategorie."
-          />
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+            <SectionHeading
+              eyebrow="Sezóna 2025/2026"
+              title="Rozpis tréninků"
+              description="Pravidelný týdenní rozpis tréninků této kategorie."
+              className="mb-0"
+            />
+            <Button href="/treninky">Tréninky všech týmů</Button>
+          </div>
           <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {trainings.map(({ day, slot }) => {
               const hall = HALLS[slot.hall];
