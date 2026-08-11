@@ -15,24 +15,43 @@ export default async function HomePage() {
     <>
       <section className="relative isolate overflow-hidden bg-primary text-primary-foreground">
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary via-primary to-primary/80" />
-        <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
-          <p className="font-display text-xs font-bold uppercase tracking-[0.22em] text-accent">
-            TJ Šumperk Basketbal
-          </p>
-          <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-            Basketbal v Šumperku – od přípravky po dospělé.
-          </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/85 sm:text-lg">
-            Rozvíjíme děti i dospělé, hrajeme krajské i ligové soutěže. Přidej
-            se k nám – chceš umět hrát basketbal? Kontaktuj nás.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Button href="/kontakty" variant="accent" size="lg">
-              Kontaktuj nás
-            </Button>
-            <Button href="/tymy" variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-              Naše týmy
-            </Button>
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-24 sm:px-6 sm:py-32 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-32">
+          <div>
+            <p className="font-display text-xs font-bold uppercase tracking-[0.22em] text-accent">
+              TJ Šumperk Basketbal
+            </p>
+            <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+              Basketbal v Šumperku – od&nbsp;přípravky po dospělé.
+            </h1>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/85 sm:text-lg text-justify">
+              Rozvíjíme děti i dospělé, hrajeme krajské i ligové soutěže. Přidej
+              se k nám – chceš umět hrát basketbal? Kontaktuj nás.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Button href="/kontakty" variant="accent" size="lg">
+                Kontaktuj nás
+              </Button>
+              <Button href="/tymy" variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                Naše týmy
+              </Button>
+            </div>
+          </div>
+          <div className="relative mx-auto w-full max-w-2xl lg:rotate-1">
+            <div className="relative overflow-hidden rounded-2xl border-4 border-primary-foreground/10 shadow-2xl ring-1 ring-black/10">
+              <Image
+                src="/kemp_2026.jpeg"
+                alt="Basketbalový kemp TJ Šumperk 2026"
+                width={1600}
+                height={1200}
+                priority
+                sizes="(min-width: 1024px) 55vw, 90vw"
+                className="aspect-[4/3] w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0" />
+            </div>
+           {/*  <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-1.5 font-display text-xs font-bold uppercase tracking-wide text-accent-foreground shadow-md">
+              Kemp 2026
+            </span> */}
           </div>
         </div>
       </section>
@@ -66,7 +85,7 @@ export default async function HomePage() {
                     </Link>
                   </h3>
                   {preview ? (
-                    <p className="mt-3 text-sm text-muted-foreground">
+                    <p className="mt-3 text-justify text-sm text-muted-foreground">
                       {preview}
                     </p>
                   ) : null}

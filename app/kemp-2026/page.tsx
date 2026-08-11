@@ -1,5 +1,4 @@
 import { Section, SectionHeading } from "@/components/shared/section";
-import { Button } from "@/components/ui/button";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
