@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Fotogalerie",
-  description: "Fotky ze zápasů, tréninků a kempů TJ Šumperk Basketbal.",
+  description: "Fotky ze zápasů, tréninků a kempů TJ ŠUMPERK BASKETBAL.",
   path: "/fotogalerie",
 });
 

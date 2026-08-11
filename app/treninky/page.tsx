@@ -7,7 +7,7 @@ import { HALLS, SCHEDULE, type HallKey } from "@/lib/training-schedule";
 export const metadata = pageMetadata({
   title: "Tréninky",
   description:
-    "Rozpis tréninků jednotlivých kategorií TJ Šumperk Basketbal pro sezónu 2025/2026.",
+    "Rozpis tréninků jednotlivých kategorií TJ ŠUMPERK BASKETBAL pro sezónu 2025/2026.",
   path: "/treninky",
 });
 

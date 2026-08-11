@@ -7,7 +7,7 @@ import { truncate } from "@/lib/utils";
 
 export const metadata = pageMetadata({
   title: "Aktuality",
-  description: "Aktuální dění v oddílu TJ Šumperk Basketbal.",
+  description: "Aktuální dění v oddílu TJ ŠUMPERK BASKETBAL.",
   path: "/aktuality",
 });
 

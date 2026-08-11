@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Příměstský kemp",
   description:
-    "Příměstský basketbalový kemp TJ Šumperk Basketbal – informace a přihlášky.",
+    "Příměstský basketbalový kemp TJ ŠUMPERK BASKETBAL – informace a přihlášky.",
   path: "/primestsky-kemp",
 });
 

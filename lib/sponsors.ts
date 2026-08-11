@@ -11,11 +11,6 @@ export const SPONSORS: Sponsor[] = [
     url: "https://uvax.cz/",
   },
   {
-    name: "Benefit",
-    logo: "/benefit.jpg",
-    url: "https://www.benefitas.cz/",
-  },
-  {
     name: "MK Fruit",
     logo: "/mk_fruit.png",
     url: "https://www.mkfruit.cz/",

@@ -19,7 +19,7 @@ export default async function TymyPage() {
     <Section>
       <SectionHeading
         eyebrow="Hráčské kategorie"
-        title="Týmy TJ Šumperk Basketbal"
+        title="Týmy TJ ŠUMPERK BASKETBAL"
         description="Sportujeme s dětmi i dospělými ve všech věkových kategoriích. Vyberte si svou kategorii a zjistěte víc."
       />
       <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

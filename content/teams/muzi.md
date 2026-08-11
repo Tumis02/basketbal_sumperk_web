@@ -3,7 +3,7 @@ slug: muzi
 name: "Muži"
 ageRange: "dospělí"
 order: 9
-shortDescription: "Družstvo mužů TJ Šumperk basketbal."
+shortDescription: "Družstvo mužů."
 hero: "/muzi.jpeg"
 ---
 

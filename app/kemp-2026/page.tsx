@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Basketbalový kemp 2026",
   description:
-    "Letní basketbalový kemp TJ Šumperk Basketbal 2026 – informace, termíny a přihlášky.",
+    "Letní basketbalový kemp TJ ŠUMPERK BASKETBAL 2026 – informace, termíny a přihlášky.",
   path: "/kemp-2026",
 });
 

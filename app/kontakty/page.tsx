@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Kontakty",
   description:
-    "Kontakty na vedení oddílu a trenéry jednotlivých kategorií TJ Šumperk Basketbal.",
+    "Kontakty na vedení oddílu a trenéry jednotlivých kategorií TJ ŠUMPERK BASKETBAL.",
   path: "/kontakty",
 });
 

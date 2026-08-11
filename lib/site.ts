@@ -1,10 +1,10 @@
 import type { Route } from "next";
 
 export const SITE = {
-  name: "TJ Šumperk Basketbal",
-  shortName: "TJ Šumperk Basketbal",
+  name: "TJ ŠUMPERK BASKETBAL",
+  shortName: "TJ ŠUMPERK BASKETBAL",
   description:
-    "Basketbalový oddíl TJ Šumperk – tréninky, týmy od přípravky po dospělé, kempy a aktuální dění.",
+    "Tréninky, týmy od přípravky po dospělé, kempy a aktuální dění.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://basketbalsumperk.cz",
   locale: "cs_CZ",
   social: {
@@ -22,8 +22,8 @@ export type NavItem = {
 export const TEAMS: NavItem[] = [
   { label: "Přípravka + U9", href: "/tymy/pripravka-u9" },
   { label: "U10 nejmladší minižáci", href: "/tymy/u10" },
-  { label: "U12 minižáci", href: "/tymy/u12" },
-  { label: "U13 minižáci", href: "/tymy/u13" },
+  { label: "U12 mladší minižáci", href: "/tymy/u12" },
+  { label: "U13 starší minižáci", href: "/tymy/u13" },
   { label: "U15 žáci", href: "/tymy/u15-zaci" },
   { label: "U17 kadetky", href: "/tymy/u17-kadetky" },
   { label: "U19 junioři", href: "/tymy/u19-juniori" },

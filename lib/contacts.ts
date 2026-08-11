@@ -1,6 +1,6 @@
 export const CLUB = {
   legalName: "TJ Šumperk, z.s.",
-  department: "Oddíl basketbalu",
+  department: "oddíl basketbalu",
   street: "Žerotínova 1691/55",
   postalCode: "787 01",
   city: "Šumperk",
@@ -42,12 +42,12 @@ export const COACHES: Coach[] = [
   { name: "Marek Müller", teams: ["Muži"], phone: "+420 605 433 093" },
   {
     name: "Renata Kurečková",
-    teams: ["Ženy", "U12 + U13"],
+    teams: [ "U15 žáci", "Ženy"],
     phone: "+420 728 043 934",
   },
   {
     name: "Dagmar Polášková",
-    teams: ["Ženy", "U12 + U13"],
+    teams: [ "U13 starší minižáci", "Ženy"],
     phone: "+420 773 920 222",
   },
   {
@@ -56,8 +56,6 @@ export const COACHES: Coach[] = [
     phone: "+420 773 688 137",
   },
   { name: "Filip Tůma", teams: ["U19 junioři"], phone: "+420 608 047 371" },
-  { name: "Aleš Skála", teams: ["U15 žáci"], phone: "+420 737 967 957" },
-  { name: "Marek Mikuláš", teams: ["U15 žáci"] },
   {
     name: "Tereza Čechová",
     teams: ["U17 kadetky", "Ženy"],
@@ -65,22 +63,33 @@ export const COACHES: Coach[] = [
   },
   { name: "Alexandra Podhorná", teams: ["U17 kadetky"] },
   {
+    name: "Soňa Krestová",
+    teams: ["U12 mladší minižáci"],
+    phone: "+420 721 113 887"
+  },
+  {
+    name: "Ivan Kaněv",
+    teams: ["U12 mladší minižáci"],
+  },
+    {
     name: "Adam Roller",
-    teams: ["Přípravka + U9"],
+    teams: ["U10 nejmladší minižáci"],
     phone: "+420 721 225 292",
   },
   {
     name: "Veronika Šubrtová",
-    teams: ["Přípravka + U9"],
+    teams: ["U10 nejmladší minižáci"],
     phone: "+420 728 893 754",
   },
+  { name: "Ondřej Šich", teams: ["Přípravka + U9"], phone: "+420 602 833 270", },
+
 ];
 
 export const TEAM_COACH_MAP: Record<string, string[]> = {
   "pripravka-u9": ["Přípravka + U9"],
-  "u10": [],
-  u12: ["U12 + U13"],
-  u13: ["U12 + U13"],
+  "u10": ["U10 nejmladší minižáci"],
+  u12: ["U12 mladší minižáci"],
+  u13: ["U13 starší minižáci"],
   "u15-zaci": ["U15 žáci"],
   "u17-kadetky": ["U17 kadetky"],
   "u19-juniori": ["U19 junioři"],
