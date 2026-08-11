@@ -9,7 +9,7 @@ export const SITE = {
   locale: "cs_CZ",
   social: {
     facebook: "https://www.facebook.com/basketbalsumperk",
-    instagram: "https://www.instagram.com/basketbalsumperk",
+    instagram: "https://www.instagram.com/basketbal_sumperk",
   },
 } as const;
 
