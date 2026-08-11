@@ -33,14 +33,7 @@ export default function Kemp2026Page() {
           title="Co vás čeká"
           description="Detaily kempu (termín, místo, cena, přihlášení) budou doplňovány v průběhu jara."
         />
-        <div className="rounded-xl border border-dashed border-border bg-muted/40 p-8 text-muted-foreground">
-          Obsah bude doplněn z CMS.
-        </div>
-        <div className="mt-10">
-          <Button href="/kontakty" variant="accent">
-            Mám zájem – kontaktovat
-          </Button>
-        </div>
+        
       </Section>
     </>
   );
