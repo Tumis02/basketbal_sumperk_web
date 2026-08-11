@@ -2,9 +2,9 @@
 slug: muzi
 name: "Muži"
 ageRange: "dospělí"
-order: 8
-shortDescription: "A-tým mužů – pravidelný účastník 2. ligy mužů."
+order: 9
+shortDescription: "Družstvo mužů TJ Šumperk basketbal."
 hero: "/muzi.jpeg"
 ---
 
-Pravidelný účastník 2. ligy mužů. V letošní sezóně je družstvo mužů přihlášeno do Českého poháru.
+V letošní sezóně tým mužů nastoupí v soutěži Středomoravská liga mužů. 

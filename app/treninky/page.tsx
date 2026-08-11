@@ -14,6 +14,7 @@ export const metadata = pageMetadata({
 const hallBadgeStyle: Record<HallKey, string> = {
   tyrsuv: "bg-primary/10 text-primary",
   zs1: "bg-accent/10 text-accent",
+  zs3: "bg-blue-100 text-blue-800",
   zs5: "bg-amber-100 text-amber-800",
 };
 
@@ -75,7 +76,7 @@ export default function TreninkyPage() {
             >
               {HALLS[key].shortName}
               <span className="font-normal opacity-80">
-                – {HALLS[key].name}
+                – {HALLS[key].address ?? HALLS[key].name}
               </span>
             </span>
           ))}

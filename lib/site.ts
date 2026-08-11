@@ -21,10 +21,11 @@ export type NavItem = {
 
 export const TEAMS: NavItem[] = [
   { label: "Přípravka + U9", href: "/tymy/pripravka-u9" },
-  { label: "U10 + U11 nejmladší minižáci", href: "/tymy/u10-u11" },
-  { label: "U12 + U13 minižáci", href: "/tymy/u12-u13" },
-  { label: "U15 + U17 dívky", href: "/tymy/u15-u17-divky" },
-  { label: "U17 kadeti", href: "/tymy/u17-kadeti" },
+  { label: "U10 nejmladší minižáci", href: "/tymy/u10" },
+  { label: "U12 minižáci", href: "/tymy/u12" },
+  { label: "U13 minižáci", href: "/tymy/u13" },
+  { label: "U15 žáci", href: "/tymy/u15-zaci" },
+  { label: "U17 kadetky", href: "/tymy/u17-kadetky" },
   { label: "U19 junioři", href: "/tymy/u19-juniori" },
   { label: "Ženy", href: "/tymy/zeny" },
   { label: "Muži", href: "/tymy/muzi" },

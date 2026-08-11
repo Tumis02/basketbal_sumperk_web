@@ -2,8 +2,8 @@
 slug: zeny
 name: "Ženy"
 ageRange: "dospělé"
-order: 7
-shortDescription: "Seniorské družstvo žen TJ Šumperk Basketbal."
+order: 8
+shortDescription: "Překrásné družstvo žen TJ Šumperk Basketbal."
 hero: "/zeny.jpg"
 ---
 

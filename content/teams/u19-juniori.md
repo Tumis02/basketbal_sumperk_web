@@ -2,7 +2,7 @@
 slug: u19-juniori
 name: "U19 junioři"
 ageRange: "16–19 let"
-order: 6
+order: 7
 shortDescription: "Juniorská kategorie navazující na kadety, příprava na seniorský basketbal."
 hero: "/u19.jpg"
 ---

@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: Props) {
 const hallBadgeStyle: Record<HallKey, string> = {
   tyrsuv: "bg-primary/10 text-primary",
   zs1: "bg-accent/10 text-accent",
+  zs3: "bg-blue-100 text-blue-800",
   zs5: "bg-amber-100 text-amber-800",
 };
 
@@ -66,11 +67,6 @@ export default async function TymDetailPage({ params }: Props) {
                 {content.trim()}
               </div>
             ) : null}
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="/kontakty" variant="outline">
-                Kontakty
-              </Button>
-            </div>
           </div>
           {frontmatter.hero ? (
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border bg-background shadow-sm">
@@ -143,11 +139,17 @@ export default async function TymDetailPage({ params }: Props) {
 
       {coaches.length > 0 ? (
         <Section className="bg-muted">
-          <SectionHeading
-            eyebrow="Trenérský tým"
-            title="Trenéři kategorie"
-            description="Na tréninky této kategorie se těší tito trenéři."
-          />
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+            <SectionHeading
+              eyebrow="Trenérský tým"
+              title="Trenéři kategorie"
+              description="Na tréninky této kategorie se těší tito trenéři."
+              className="mb-0"
+            />
+            <Button href="/kontakty" variant="outline">
+              Všechny kontakty
+            </Button>
+          </div>
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {coaches.map((coach) => (
               <li
