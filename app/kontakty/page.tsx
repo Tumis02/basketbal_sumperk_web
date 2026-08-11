@@ -121,16 +121,36 @@ export default function KontaktyPage() {
               Přihlášení do oddílu
             </p>
             <p className="mt-3 text-muted-foreground">
-              Při přihlášení do oddílu basketbalu budete potřebovat formuláře
-              <strong className="text-foreground"> GDPR souhlas </strong>
-              a <strong className="text-foreground">Přihláška do TJ</strong>.
+              Při přihlášení do oddílu basketbalu budete potřebovat formuláře{" "}
+              <a
+                href="/GDPR-souhlas.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold text-foreground underline underline-offset-2 hover:text-primary"
+              >
+                GDPR souhlas
+              </a>{" "}
+              a{" "}
+              <a
+                href="/Prihlaska-do-TJ.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold text-foreground underline underline-offset-2 hover:text-primary"
+              >
+                Přihláška do TJ
+              </a>
+              .
             </p>
             <p className="mt-3 text-muted-foreground">
-              Při uvedení hráče na soupisce družstva budete potřebovat
-              <strong className="text-foreground">
-                {" "}
+              Při uvedení hráče na soupisce družstva budete potřebovat{" "}
+              <a
+                href="/1616180559_zadost_licence_new.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold text-foreground underline underline-offset-2 hover:text-primary"
+              >
                 žádost o vystavení licence ČBF
-              </strong>
+              </a>
               .
             </p>
           </div>
