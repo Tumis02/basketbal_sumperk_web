@@ -17,7 +17,7 @@ export default async function HomePage() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary via-primary to-primary/80" />
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-24 sm:px-6 sm:py-32 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-32">
           <div>
-            <p className="font-display text-xs font-bold uppercase tracking-[0.22em] text-accent">
+            <p className="font-display text-sm font-bold uppercase tracking-[0.22em] text-accent">
               TJ ŠUMPERK BASKETBAL
             </p>
             <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
