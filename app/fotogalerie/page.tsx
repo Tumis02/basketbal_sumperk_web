@@ -1,4 +1,6 @@
 import { Section, SectionHeading } from "@/components/shared/section";
+import { PhotoGallery } from "@/components/gallery/photo-gallery";
+import { getGalleryPhotos } from "@/lib/gallery";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -8,6 +10,8 @@ export const metadata = pageMetadata({
 });
 
 export default function FotogaleriePage() {
+  const photos = getGalleryPhotos();
+
   return (
     <Section>
       <SectionHeading
@@ -15,9 +19,13 @@ export default function FotogaleriePage() {
         title="Fotogalerie"
         description="Fotky ze zápasů, tréninků a kempů."
       />
-      <div className="rounded-xl border border-dashed border-border bg-muted/40 p-8 text-muted-foreground">
-        Galerie alb bude napojena na CMS / Cloudinary v dalším kroku.
-      </div>
+      {photos.length > 0 ? (
+        <PhotoGallery photos={photos} />
+      ) : (
+        <div className="rounded-xl border border-dashed border-border bg-muted/40 p-8 text-muted-foreground">
+          Zatím tu nejsou žádné fotky.
+        </div>
+      )}
     </Section>
   );
 }
