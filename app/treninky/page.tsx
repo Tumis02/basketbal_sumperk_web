@@ -65,21 +65,23 @@ export default function TreninkyPage() {
           ))}
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
-          <span className="font-semibold uppercase tracking-wide">
+        <div className="mt-8 flex items-start gap-3 text-xs text-muted-foreground">
+          <span className="shrink-0 pt-1 font-semibold uppercase tracking-wide">
             Legenda hal:
           </span>
-          {(Object.keys(HALLS) as HallKey[]).map((key) => (
-            <span
-              key={key}
-              className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-semibold ${hallBadgeStyle[key]}`}
-            >
-              {HALLS[key].shortName}
-              <span className="font-normal opacity-80">
-                – {HALLS[key].address ?? HALLS[key].name}
+          <div className="flex min-w-0 flex-1 flex-wrap items-center gap-3">
+            {(Object.keys(HALLS) as HallKey[]).map((key) => (
+              <span
+                key={key}
+                className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-semibold ${hallBadgeStyle[key]}`}
+              >
+                {HALLS[key].shortName}
+                <span className="font-normal opacity-80">
+                  – {HALLS[key].address ?? HALLS[key].name}
+                </span>
               </span>
-            </span>
-          ))}
+            ))}
+          </div>
         </div>
       </Section>
 
