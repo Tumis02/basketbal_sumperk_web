@@ -33,7 +33,7 @@ export const TEAMS: NavItem[] = [
 
 export const CAMPS: NavItem[] = [
   { label: "Kemp 2026", href: "/kemp-2026" },
-  { label: "Příměstský kemp", href: "/primestsky-kemp" },
+  { label: "Příměstský kemp 2026", href: "/primestsky-kemp" },
 ];
 
 export const NAV: NavItem[] = [
