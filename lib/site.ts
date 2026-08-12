@@ -4,7 +4,7 @@ export const SITE = {
   name: "TJ ŠUMPERK BASKETBAL",
   shortName: "TJ ŠUMPERK BASKETBAL",
   description:
-    "Tréninky, týmy od přípravky po dospělé, kempy a aktuální dění.",
+    "Tréninky, týmy od přípravky po dospělé, kempy a\u00A0aktuální dění.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://basketbalsumperk.cz",
   locale: "cs_CZ",
   social: {
