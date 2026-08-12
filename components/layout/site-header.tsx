@@ -1,16 +1,28 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { NAV, SITE } from "@/lib/site";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { NavDropdown } from "@/components/layout/nav-dropdown";
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
           aria-label={SITE.name}
+          onClick={(event) => {
+            if (isHome) {
+              event.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
           className="flex items-center gap-3 font-display text-lg font-extrabold tracking-tight text-primary"
         >
           <Image
