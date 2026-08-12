@@ -143,7 +143,7 @@ export default function PrimestskyKempPage() {
 
         <div className="mt-6 rounded-xl border border-border bg-background p-6">
           <p className="font-display text-base font-bold text-foreground">
-            Hlavní organizátor campu
+            Hlavní organizátor kempu
           </p>
           <p className="mt-2 text-sm text-foreground">
             Veronika Šubrtová, Šumperk, Žerotínova 1691/55, PSČ 787 01
