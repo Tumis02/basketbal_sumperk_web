@@ -43,6 +43,6 @@ export const NAV: NavItem[] = [
  /*  { label: "Zápasy", href: "/TODO" },  */
   { label: "Aktuality", href: "/aktuality" },
   { label: "Foto", href: "/fotogalerie" },
-  { label: "Kempy", href: "/kemp-2026", children: CAMPS },
+  { label: "Kempy", href: "/kempy", children: CAMPS },
   { label: "Kontakty", href: "/kontakty" },
 ];
