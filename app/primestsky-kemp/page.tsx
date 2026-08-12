@@ -50,7 +50,7 @@ export default function PrimestskyKempPage() {
       <section className="bg-primary text-primary-foreground">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
           <p className="font-display text-sm font-bold uppercase tracking-[0.22em] text-accent">
-            Léto v Šumperku
+            Léto 2026
           </p>
           <h1 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
             Příměstský kemp

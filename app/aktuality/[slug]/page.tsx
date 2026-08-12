@@ -4,6 +4,24 @@ import { Section } from "@/components/shared/section";
 import { getAllNews, getNewsBySlug } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 
+function renderContent(content: string) {
+  const parts = content.trim().split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (!match) return part;
+    const [, label, href] = match;
+    return (
+      <Link
+        key={i}
+        href={href}
+        className="font-semibold text-primary hover:underline"
+      >
+        {label}
+      </Link>
+    );
+  });
+}
+
 export async function generateStaticParams() {
   const news = await getAllNews();
   return news.map((n) => ({ slug: n.frontmatter.slug }));
@@ -44,7 +62,7 @@ export default async function AktualitaDetailPage({ params }: Props) {
         {frontmatter.title}
       </h1>
       <article className="prose prose-neutral mt-8 max-w-none whitespace-pre-line text-base leading-relaxed text-foreground">
-        {content.trim()}
+        {renderContent(content)}
       </article>
     </Section>
   );

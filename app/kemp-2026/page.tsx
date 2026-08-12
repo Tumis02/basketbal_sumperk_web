@@ -21,12 +21,12 @@ export default function Kemp2026Page() {
             Léto 2026
           </p>
           <h1 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
-            Basketbalový kemp 2026
+            Basketbalový kemp Dolní Čermná 2026
           </h1>
-          <p className="mt-5 max-w-4xl text-base text-primary-foreground/85 sm:text-lg">
+        {/*   <p className="mt-5 max-w-4xl text-base text-primary-foreground/85 sm:text-lg">
             Tradiční letní kemp pro mladé basketbalisty. Základní informace
             zveřejňujeme postupně.
-          </p>
+          </p> */}
         </div>
       </section>
 
