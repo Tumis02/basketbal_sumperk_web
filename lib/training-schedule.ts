@@ -14,29 +14,30 @@ export const HALLS: Record<HallKey, Hall> = {
     name: "Tyršův stadion",
     shortName: "Tyršův stadion",
     address: "Žerotínova 1691/55, Šumperk",
-    occupancyImage: "/treninky_25-26_.jpg"
+    occupancyImage: "/Treninky_26-27.png"
   },
   zs1: {
     key: "zs1",
     name: "1. ZŠ Šumperk",
     shortName: "1. ZŠ",
     address: "Dr. E. Beneše 974/1, Šumperk",
-    occupancyImage: "/treninky_25-26_1_zs.jpg"
+    occupancyImage: "/Treninky_26-27_1zs.png"
+  },
+    zs5: {
+    key: "zs5",
+    name: "5. ZŠ Šumperk",
+    shortName: "5. ZŠ",
+    address: "Vrchlického 1846/22, Šumperk",
+    occupancyImage: "/Treninky_26-27_5zs.png"
   },
    zs3: {
     key: "zs3",
     name: "3. ZŠ Šumperk",
     shortName: "3. ZŠ",
     address: "8. května 870/63, Šumperk",
-    occupancyImage: "/treninky_25-26_1_zs.jpg" //TODO
+    occupancyImage: "/Treninky_26-27_3zs.png" 
   },
-  zs5: {
-    key: "zs5",
-    name: "5. ZŠ Šumperk",
-    shortName: "5. ZŠ",
-    address: "Vrchlického 1846/22, Šumperk",
-    occupancyImage: "/treninky_5zs_2025-2026_.jpg"
-  },
+
 };
 
 export type TrainingSlot = {
@@ -60,7 +61,7 @@ export const TEAM_KEYWORDS: Record<string, string[]> = {
   "u10": ["u10"],
   u12: ["u12"],
   u13: ["u13"],
-  "u15-zaci": ["u15", "kadeti"],
+  "u15-zaci": ["u15", "žáci"],
   "u17-kadetky": ["kadetky"],
   "u19-juniori": ["u19", "junioři"],
   muzi: ["muži"],
@@ -99,7 +100,7 @@ export const SCHEDULE: DaySchedule[] = [
     day: "Úterý",
     slots: [
       { team: "U10", from: "16:30", to: "18:00", hall: "zs1" },
-      { team: "U15 kadeti", from: "17:30", to: "19:00", hall: "tyrsuv" },
+      { team: "U15 žáci", from: "17:30", to: "19:00", hall: "tyrsuv" },
       { team: "U19 junioři", from: "19:00", to: "20:30", hall: "tyrsuv" },
       //{ team: "Muži", from: "20:30", to: "22:00", hall: "tyrsuv" },
     ],
@@ -107,7 +108,7 @@ export const SCHEDULE: DaySchedule[] = [
   {
     day: "Středa",
     slots: [
-      { team: "U15", from: "15:30", to: "17:00", hall: "tyrsuv" },
+      { team: "U15 žáci", from: "15:30", to: "17:00", hall: "tyrsuv" },
       { team: "U13", from: "17:00", to: "18:30", hall: "tyrsuv" },
       { team: "U17 kadetky", from: "18:30", to: "20:00", hall: "tyrsuv" },
     ],

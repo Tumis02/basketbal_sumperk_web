@@ -40,8 +40,9 @@ export const NAV: NavItem[] = [
   { label: "Domů", href: "/" },
   { label: "Týmy", href: "/tymy", children: TEAMS },
   { label: "Tréninky", href: "/treninky" },
+ /*  { label: "Zápasy", href: "/TODO" },  */
   { label: "Aktuality", href: "/aktuality" },
-  { label: "Fotogalerie", href: "/fotogalerie" },
+  { label: "Foto", href: "/fotogalerie" },
   { label: "Kempy", href: "/kemp-2026", children: CAMPS },
   { label: "Kontakty", href: "/kontakty" },
 ];
