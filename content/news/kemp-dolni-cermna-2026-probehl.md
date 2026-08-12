@@ -1,6 +1,6 @@
 ---
 slug: kemp-dolni-cermna-2026-probehl
-title: "Pobytový kemp v Dolní Čermné proběhl"
+title: "Kempy 2026"
 date: "2026-08-12"
 excerpt: "Pobytový basketbalový kemp v Dolní Čermné je za námi. Nyní se těšíme na příměstský kemp, který se uskuteční 24.–28. 8. 2026."
 published: true
