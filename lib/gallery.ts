@@ -8,6 +8,7 @@ const IMAGE_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif"]);
 const EXCLUDED_FILES = new Set([
   "logo.png",
   "mk_fruit.png",
+  "logo_spknew.jpg",
   "benefit.jpg",
   "uvax.jpg",
   "treninky_25-26_.jpg",
