@@ -13,6 +13,7 @@ export type TeamFrontmatter = {
   order?: number;
   shortDescription?: string;
   hero?: string;
+  competitionUrl?: string;
   coaches?: string[];
   trainingDays?: string[];
 };

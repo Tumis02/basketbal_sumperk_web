@@ -23,7 +23,7 @@ export default async function HomePage() {
             <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
               Basketbal v Šumperku – od&nbsp;přípravky po dospělé.
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/85 sm:text-lg text-justify">
+            <p className="mt-6 max-w-4xl text-base leading-relaxed text-primary-foreground/85 sm:text-lg text-justify">
               Rozvíjíme děti i dospělé, hrajeme krajské i ligové soutěže. Přidej
               se k nám – chceš umět hrát basketbal? Kontaktuj nás.
             </p>
@@ -36,7 +36,7 @@ export default async function HomePage() {
               </Button>
             </div>
           </div>
-          <div className="relative mx-auto w-full max-w-2xl lg:rotate-1">
+          <div className="relative mx-auto w-full max-w-4xl lg:rotate-1">
             <div className="relative overflow-hidden rounded-2xl border-4 border-primary-foreground/10 shadow-2xl ring-1 ring-black/10">
               <Image
                 src="/kemp_2026.jpeg"

@@ -1,4 +1,6 @@
 import { Section, SectionHeading } from "@/components/shared/section";
+import { PhotoGallery } from "@/components/gallery/photo-gallery";
+import { getGalleryPhotosFromDir } from "@/lib/gallery";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -9,6 +11,8 @@ export const metadata = pageMetadata({
 });
 
 export default function Kemp2026Page() {
+  const photos = getGalleryPhotosFromDir("kemp", "Basketbalový kemp 2026");
+
   return (
     <>
       <section className="bg-primary text-primary-foreground">
@@ -19,21 +23,27 @@ export default function Kemp2026Page() {
           <h1 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
             Basketbalový kemp 2026
           </h1>
-          <p className="mt-5 max-w-2xl text-base text-primary-foreground/85 sm:text-lg">
+          <p className="mt-5 max-w-4xl text-base text-primary-foreground/85 sm:text-lg">
             Tradiční letní kemp pro mladé basketbalisty. Základní informace
             zveřejňujeme postupně.
           </p>
         </div>
       </section>
 
-      <Section>
+    {/*   <Section>
         <SectionHeading
           eyebrow="Informace"
           title="Co vás čeká"
           description="Detaily kempu (termín, místo, cena, přihlášení) budou doplňovány v průběhu jara."
         />
-        
-      </Section>
+      </Section> */}
+
+      {photos.length > 0 ? (
+        <Section className="pt-0">
+          <SectionHeading eyebrow="Galerie" title="Fotky z kempu" />
+          <PhotoGallery photos={photos} />
+        </Section>
+      ) : null}
     </>
   );
 }

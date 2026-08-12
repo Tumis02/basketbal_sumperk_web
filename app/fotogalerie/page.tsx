@@ -1,6 +1,6 @@
 import { Section, SectionHeading } from "@/components/shared/section";
 import { PhotoGallery } from "@/components/gallery/photo-gallery";
-import { getGalleryPhotos } from "@/lib/gallery";
+import { getGalleryPhotos, getGalleryPhotosFromDir } from "@/lib/gallery";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -10,7 +10,10 @@ export const metadata = pageMetadata({
 });
 
 export default function FotogaleriePage() {
-  const photos = getGalleryPhotos();
+  const photos = [
+    ...getGalleryPhotos(),
+    ...getGalleryPhotosFromDir("kemp", "Basketbalový kemp 2026"),
+  ];
 
   return (
     <Section>

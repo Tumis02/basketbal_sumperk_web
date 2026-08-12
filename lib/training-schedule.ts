@@ -14,28 +14,28 @@ export const HALLS: Record<HallKey, Hall> = {
     name: "Tyršův stadion",
     shortName: "Tyršův stadion",
     address: "Žerotínova 1691/55, Šumperk",
-    occupancyImage: "/Treninky_26-27.png"
+    occupancyImage: "/treninky/Treninky_26-27.png"
   },
   zs1: {
     key: "zs1",
     name: "1. ZŠ Šumperk",
     shortName: "1. ZŠ",
     address: "Dr. E. Beneše 974/1, Šumperk",
-    occupancyImage: "/Treninky_26-27_1zs.png"
+    occupancyImage: "/treninky/Treninky_26-27_1zs.png"
   },
     zs5: {
     key: "zs5",
     name: "5. ZŠ Šumperk",
     shortName: "5. ZŠ",
     address: "Vrchlického 1846/22, Šumperk",
-    occupancyImage: "/Treninky_26-27_5zs.png"
+    occupancyImage: "/treninky/Treninky_26-27_5zs.png"
   },
    zs3: {
     key: "zs3",
     name: "3. ZŠ Šumperk",
     shortName: "3. ZŠ",
     address: "8. května 870/63, Šumperk",
-    occupancyImage: "/Treninky_26-27_3zs.png" 
+    occupancyImage: "/treninky/Treninky_26-27_3zs.png"
   },
 
 };

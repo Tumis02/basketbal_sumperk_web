@@ -63,9 +63,19 @@ export default async function TymDetailPage({ params }: Props) {
               {frontmatter.name}
             </h1>
             {content.trim() ? (
-              <div className="mt-6 max-w-2xl whitespace-pre-line text-base leading-relaxed text-foreground sm:text-lg">
+              <div className="mt-6 max-w-4xl whitespace-pre-line text-base leading-relaxed text-foreground sm:text-lg">
                 {content.trim()}
               </div>
+            ) : null}
+            {frontmatter.competitionUrl ? (
+              <Button
+                href={frontmatter.competitionUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6"
+              >
+                Zápasy týmu
+              </Button>
             ) : null}
           </div>
           {frontmatter.hero ? (

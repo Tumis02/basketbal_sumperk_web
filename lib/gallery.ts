@@ -41,3 +41,20 @@ export function getGalleryPhotos(): GalleryPhoto[] {
       alt: toAltText(file),
     }));
 }
+
+export function getGalleryPhotosFromDir(
+  dir: string,
+  altPrefix?: string
+): GalleryPhoto[] {
+  const fullDir = path.join(process.cwd(), "public", dir);
+  if (!fs.existsSync(fullDir)) return [];
+  const files = fs.readdirSync(fullDir);
+
+  return files
+    .filter((file) => IMAGE_EXTENSIONS.has(path.extname(file).toLowerCase()))
+    .sort()
+    .map((file, index) => ({
+      src: `/${dir}/${file}`,
+      alt: altPrefix ? `${altPrefix} – fotka ${index + 1}` : toAltText(file),
+    }));
+}
