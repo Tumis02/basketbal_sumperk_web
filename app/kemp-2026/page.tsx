@@ -39,7 +39,7 @@ export default function Kemp2026Page() {
       </Section> */}
 
       {photos.length > 0 ? (
-        <Section className="pt-0">
+        <Section>
           <SectionHeading eyebrow="Galerie" title="Fotky z kempu" />
           <PhotoGallery photos={photos} />
         </Section>
