@@ -106,7 +106,7 @@ export default async function TymDetailPage({ params }: Props) {
             <SectionHeading
               eyebrow="Sezóna 2025/2026"
               title="Rozpis tréninků"
-              description="Pravidelný týdenní rozpis tréninků této kategorie."
+              description={`Pravidelný týdenní rozpis tréninků kategorie ${frontmatter.name}`}
               className="mb-0"
             />
             <Button href="/treninky">Tréninky všech týmů</Button>
@@ -153,7 +153,7 @@ export default async function TymDetailPage({ params }: Props) {
             <SectionHeading
               eyebrow="Trenérský tým"
               title="Trenéři kategorie"
-              description="Na tréninky této kategorie se těší tito trenéři."
+              description=""
               className="mb-0"
             />
             <Button href="/kontakty" variant="outline">

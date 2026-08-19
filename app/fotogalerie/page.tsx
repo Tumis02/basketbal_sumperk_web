@@ -20,7 +20,7 @@ export default function FotogaleriePage() {
       <SectionHeading
         eyebrow="Galerie"
         title="Fotogalerie"
-        description="Fotky ze zápasů, tréninků a kempů."
+        description=""
       />
       {photos.length > 0 ? (
         <PhotoGallery photos={photos} />

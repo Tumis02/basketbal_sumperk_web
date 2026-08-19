@@ -174,7 +174,7 @@ export default function KontaktyPage() {
         <SectionHeading
           eyebrow="Trenéři"
           title="Trenéři kategorií"
-          description="Konkrétní dotazy k tréninkům směřujte na trenéry dané kategorie."
+          description=""
         />
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {COACHES.map((coach) => (

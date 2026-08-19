@@ -3,7 +3,7 @@ slug: u15-zaci
 name: "U15 žáci"
 ageRange: "13–15 let"
 order: 5
-shortDescription: "Chlapecká kategorie zaměřená na herní situace a soutěžní hru"
+shortDescription: "Chlapecká kategorie zaměřená na herní situace a soutěžní hru."
 competitionUrl: "https://cz.basketball/soutez/5518?p=10393"
 ---
 

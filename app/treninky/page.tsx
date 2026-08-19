@@ -23,9 +23,9 @@ export default function TreninkyPage() {
     <>
       <Section>
         <SectionHeading
-          eyebrow="Sezóna 2025/2026"
+          eyebrow="Sezóna 2026/2027"
           title="Rozpis tréninků"
-          description="Tréninky probíhají od 1. září 2025 podle níže uvedeného rozpisu. Pokud není uvedeno jinak, koná se trénink na Tyršově stadionu."
+          description="Tréninky probíhají od 1. září 2026 podle níže uvedeného rozpisu."
         />
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -89,7 +89,7 @@ export default function TreninkyPage() {
         <SectionHeading
           eyebrow="Harmonogramy hal"
           title="Obsazenost hal"
-          description="Kliknutím na harmonogram zobrazíte detailní obsazenost haly ve větším formátu."
+          description="Kliknutím na obrázek zobrazíte detailní obsazenost haly ve větším formátu."
         />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {(Object.keys(HALLS) as HallKey[]).map((key) => {

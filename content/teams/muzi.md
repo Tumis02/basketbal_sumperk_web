@@ -3,7 +3,7 @@ slug: muzi
 name: "Muži"
 ageRange: "dospělí"
 order: 9
-shortDescription: "Družstvo mužů"
+shortDescription: ""
 hero: "/muzi.jpeg"
 competitionUrl: "https://cz.basketball/soutez/5373?p=10205"
 ---

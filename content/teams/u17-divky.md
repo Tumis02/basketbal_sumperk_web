@@ -3,7 +3,7 @@ slug: u17-kadetky
 name: "U17 kadetky"
 ageRange: "14–17 let"
 order: 6
-shortDescription: "Dívčí kategorie zaměřená na prohloubení dovedností, kondici a herní situace"
+shortDescription: "Dívčí kategorie zaměřená na řešení pokročilých herních situací."
 hero: "/divky_u15-17.jpeg"
 competitionUrl: "https://cz.basketball/soutez/5441?p=10387"
 ---

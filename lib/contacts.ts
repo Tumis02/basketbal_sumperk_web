@@ -50,12 +50,13 @@ export const COACHES: Coach[] = [
     teams: [ "U13 starší minižáci", "Ženy"],
     phone: "+420 773 920 222",
   },
+  { name: "Filip Tůma", teams: ["U19 junioři"], phone: "+420 608 047 371" },
   {
     name: "Martina Müllerová Zelená",
     teams: ["U19 junioři"],
     phone: "+420 773 688 137",
   },
-  { name: "Filip Tůma", teams: ["U19 junioři"], phone: "+420 608 047 371" },
+  
   {
     name: "Tereza Čechová",
     teams: ["U17 kadetky", "Ženy"],

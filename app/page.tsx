@@ -7,9 +7,38 @@ import { SPONSORS } from "@/lib/sponsors";
 import { truncate } from "@/lib/utils";
 import Link from "next/link";
 
+function TeamCard({
+  frontmatter,
+}: {
+  frontmatter: Awaited<ReturnType<typeof getAllTeams>>[number]["frontmatter"];
+}) {
+  return (
+    <Link
+      href={`/tymy/${frontmatter.slug}`}
+      className="block h-full rounded-xl border border-border bg-background p-5 transition-all hover:-translate-y-0.5 hover:border-primary hover:shadow-md"
+    >
+      <p className="text-xs uppercase tracking-wide text-accent">
+        {frontmatter.ageRange}
+      </p>
+      <h3 className="mt-2 font-display text-base font-bold text-foreground">
+        {frontmatter.name}
+      </h3>
+      {frontmatter.shortDescription ? (
+        <p className="mt-3 text-sm text-muted-foreground">
+          {frontmatter.shortDescription}
+        </p>
+      ) : null}
+      <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+        Více informací <ArrowRight className="h-4 w-4" />
+      </span>
+    </Link>
+  );
+}
+
 export default async function HomePage() {
   const [teams, news] = await Promise.all([getAllTeams(), getAllNews()]);
   const latestNews = news.slice(0, 3);
+  const teamRows = [teams.slice(0, 4), teams.slice(4, 7), teams.slice(7)];
 
   return (
     <>
@@ -21,11 +50,10 @@ export default async function HomePage() {
               TJ ŠUMPERK BASKETBAL
             </p>
             <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              Basketbal v Šumperku – od&nbsp;přípravky po dospělé.
+              Basketbal v Šumperku – od&nbsp;přípravky po dospělé
             </h1>
             <p className="mt-6 max-w-4xl text-base leading-relaxed text-primary-foreground/85 sm:text-lg text-justify">
-              Rozvíjíme děti i dospělé, hrajeme krajské i ligové soutěže. Přidej
-              se k nám – chceš umět hrát basketbal? Kontaktuj nás.
+              Rozvíjíme sportovní talent dětí i&nbsp;dospělých a&nbsp;úspěšně reprezentujeme náš klub v&nbsp;krajských a&nbsp;ligových soutěžích. Chcete se naučit hrát basketbal pod&nbsp;vedením zkušených trenérů? Přidejte se k&nbsp;našemu týmu a&nbsp;kontaktujte nás.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button href="/kontakty" variant="accent" size="lg">
@@ -114,33 +142,24 @@ export default async function HomePage() {
         <SectionHeading
           eyebrow="Hráčské kategorie"
           title="Naše týmy"
-          description="Tréninky pro všechny věkové kategorie – od přípravky po dospělé."
+          description=""
         />
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid gap-4 sm:grid-cols-2 lg:hidden">
           {teams.map(({ frontmatter }) => (
             <li key={frontmatter.slug}>
-              <Link
-                href={`/tymy/${frontmatter.slug}`}
-                className="block h-full rounded-xl border border-border bg-background p-5 transition-all hover:-translate-y-0.5 hover:border-primary hover:shadow-md"
-              >
-                <p className="text-xs uppercase tracking-wide text-accent">
-                  {frontmatter.ageRange}
-                </p>
-                <h3 className="mt-2 font-display text-base font-bold text-foreground">
-                  {frontmatter.name}
-                </h3>
-                {frontmatter.shortDescription ? (
-                  <p className="mt-3 text-sm text-muted-foreground">
-                    {frontmatter.shortDescription}
-                  </p>
-                ) : null}
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                  Více informací <ArrowRight className="h-4 w-4" />
-                </span>
-              </Link>
+              <TeamCard frontmatter={frontmatter} />
             </li>
           ))}
         </ul>
+        <div className="hidden lg:flex lg:flex-col lg:gap-4">
+          {teamRows.map((row, index) => (
+            <div key={index} className="grid grid-cols-4 gap-4">
+              {row.map(({ frontmatter }) => (
+                <TeamCard key={frontmatter.slug} frontmatter={frontmatter} />
+              ))}
+            </div>
+          ))}
+        </div>
       </Section>
 
       {SPONSORS.length > 0 ? (
