@@ -7,4 +7,4 @@ shortDescription: "Chlapecká kategorie zaměřená na herní situace a soutěž
 competitionUrl: "https://cz.basketball/soutez/5518?p=10393"
 ---
 
-V této kategorii sportují chlapci ve věku od 13 do 15 let. Cílem tréninků je prohloubení všech basketbalových dovedností a jejich využití v herních situacích.
+V této kategorii sportují chlapci ve věku od 13 do 14 let. Cílem tréninků je prohloubení všech basketbalových dovedností a jejich využití v herních situacích.

@@ -8,4 +8,4 @@ hero: "/pripravka.jpeg"
 competitionUrl: ""
 ---
 
-V této kategorii sportují chlapci a dívky ve věku od 6 do 9 let. Cílem tréninků je vybudovat u dětí vztah k pohybu zábavnou formou. Náplní tréninků jsou zábavné hry a cvičení pro všestranný a zdravý rozvoj dětí.
+V této kategorii sportují chlapci a dívky ve věku od 6 do 7 let. Cílem tréninků je vybudovat u dětí vztah k pohybu zábavnou formou. Náplní tréninků jsou zábavné hry a cvičení pro všestranný a zdravý rozvoj dětí.

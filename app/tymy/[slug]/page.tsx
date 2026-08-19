@@ -104,7 +104,7 @@ export default async function TymDetailPage({ params }: Props) {
         <Section>
           <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
             <SectionHeading
-              eyebrow="Sezóna 2025/2026"
+              eyebrow="Sezóna 2026/2027"
               title="Rozpis tréninků"
               description={`Pravidelný týdenní rozpis tréninků kategorie ${frontmatter.name}`}
               className="mb-0"
