@@ -127,7 +127,7 @@ export const SCHEDULE: DaySchedule[] = [
     day: "Pátek",
     slots: [
       { team: "U10", from: "15:30", to: "16:30", hall: "zs1" },
-      { team: "U12 + U13", from: "16:00", to: "17:30", hall: "zs5" },
+      { team: "U13", from: "16:00", to: "17:30", hall: "zs5" },
       { team: "U15 + U19", from: "16:30", to: "18:00", hall: "tyrsuv" },
       { team: "U17 kadetky + Ženy", from: "18:00", to: "19:30", hall: "tyrsuv" },
       { team: "Muži", from: "19:30", to: "21:00", hall: "tyrsuv" },
