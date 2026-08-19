@@ -82,12 +82,12 @@ export const COACHES: Coach[] = [
     teams: ["U10 nejmladší minižáci"],
     phone: "+420 728 893 754",
   },
-  { name: "Ondřej Šich", teams: ["Přípravka + U9"], phone: "+420 602 833 270", },
+  { name: "Ondřej Šich", teams: ["PřípravkaU9"], phone: "+420 602 833 270", },
 
 ];
 
 export const TEAM_COACH_MAP: Record<string, string[]> = {
-  "pripravka-u9": ["Přípravka + U9"],
+  "pripravka-u9": ["Přípravka"],
   "u10": ["U10 nejmladší minižáci"],
   u12: ["U12 mladší minižáci"],
   u13: ["U13 starší minižáci"],

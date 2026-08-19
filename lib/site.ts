@@ -20,7 +20,7 @@ export type NavItem = {
 };
 
 export const TEAMS: NavItem[] = [
-  { label: "Přípravka + U9", href: "/tymy/pripravka-u9" },
+  { label: "Přípravka", href: "/tymy/pripravka-u9" },
   { label: "U10 nejmladší minižáci", href: "/tymy/u10" },
   { label: "U12 mladší minižáci", href: "/tymy/u12" },
   { label: "U13 starší minižáci", href: "/tymy/u13" },
