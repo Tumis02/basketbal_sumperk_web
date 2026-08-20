@@ -62,7 +62,7 @@ export const COACHES: Coach[] = [
     teams: ["U17 kadetky", "Ženy"],
     phone: "+420 608 724 885",
   },
-  { name: "Alexandra Podhorná", teams: ["U17 kadetky"] },
+  { name: "Alexandra Podhorná", teams: ["U17 kadetky"], phone: "+420 724 448 559" },
   {
     name: "Soňa Krestová",
     teams: ["U12 mladší minižáci"],
