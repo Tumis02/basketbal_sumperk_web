@@ -1,22 +1,24 @@
-import {
+/* import {
   CalendarDays,
   MapPin,
   Phone,
   UserRound,
   Utensils,
   Wallet,
-} from "lucide-react";
+} from "lucide-react"; */
 import { Section, SectionHeading } from "@/components/shared/section";
+import { PhotoGallery } from "@/components/gallery/photo-gallery";
+import { getGalleryPhotosFromDir } from "@/lib/gallery";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Příměstský kemp",
   description:
-    "Příměstský basketbalový kemp TJ ŠUMPERK BASKETBAL – informace a přihlášky.",
+    "Příměstský basketbalový kemp TJ ŠUMPERK BASKETBAL – fotky z průběhu kempu.",
   path: "/primestsky-kemp",
 });
 
-const INFO_ITEMS = [
+/* const INFO_ITEMS = [
   {
     icon: CalendarDays,
     label: "Termín konání",
@@ -42,9 +44,11 @@ const INFO_ITEMS = [
     label: "Cena",
     value: "3 200,– Kč",
   },
-];
+]; */
 
 export default function PrimestskyKempPage() {
+  const photos = getGalleryPhotosFromDir("primestak", "Příměstský kemp 2026");
+
   return (
     <>
       <section className="bg-primary text-primary-foreground">
@@ -55,14 +59,14 @@ export default function PrimestskyKempPage() {
           <h1 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
             Příměstský kemp
           </h1>
-          <p className="mt-5 max-w-4xl text-base text-primary-foreground/85 sm:text-lg">
+        {/*   <p className="mt-5 max-w-4xl text-base text-primary-foreground/85 sm:text-lg">
             Týdenní příměstský kemp pro děti – sport, hry a basketbal pod
             vedením zkušených trenérů.
-          </p>
+          </p> */}
         </div>
       </section>
 
-      <Section>
+    {/*   <Section>
         <SectionHeading
           eyebrow="Pořadatel: TJ Šumperk, z.s."
           title="Příměstský kemp 2026"
@@ -158,7 +162,14 @@ export default function PrimestskyKempPage() {
             </a>
           </div>
         </div>
-      </Section>
+      </Section> */}
+
+      {photos.length > 0 ? (
+        <Section>
+          <SectionHeading eyebrow="Galerie" title="Fotky z kempu" />
+          <PhotoGallery photos={photos} />
+        </Section>
+      ) : null}
     </>
   );
 }

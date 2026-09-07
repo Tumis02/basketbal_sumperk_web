@@ -13,6 +13,7 @@ export default function FotogaleriePage() {
   const photos = [
     ...getGalleryPhotos(),
     ...getGalleryPhotosFromDir("kemp", "Basketbalový kemp 2026"),
+    ...getGalleryPhotosFromDir("primestak", "Příměstský kemp 2026"),
   ];
 
   return (
