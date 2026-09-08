@@ -71,7 +71,7 @@ export const COACHES: Coach[] = [
   {
     name: "Ivan Kaněv",
     teams: ["U12 mladší minižáci"],
-    phone: "+420 775 388 829",
+   /*  phone: "+420 775 388 829", */
   },
     {
     name: "Adam Roller",
