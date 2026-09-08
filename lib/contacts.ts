@@ -71,6 +71,7 @@ export const COACHES: Coach[] = [
   {
     name: "Ivan Kaněv",
     teams: ["U12 mladší minižáci"],
+    phone: "+420 775 388 829",
   },
     {
     name: "Adam Roller",
@@ -82,7 +83,7 @@ export const COACHES: Coach[] = [
     teams: ["U10 nejmladší minižáci"],
     phone: "+420 728 893 754",
   },
-  { name: "Ondřej Šich", teams: ["PřípravkaU9"], phone: "+420 602 833 270", },
+  { name: "Ondřej Šich", teams: ["Přípravka"], phone: "+420 602 833 270" },
 
 ];
 
