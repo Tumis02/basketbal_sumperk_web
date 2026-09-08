@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CalendarDays, ImageIcon, MapPin, Phone, UserRound } from "lucide-react";
+import { CalendarDays, ImageIcon, MapPin, Phone, UserRound, Wallet } from "lucide-react";
 import { Section, SectionHeading } from "@/components/shared/section";
 import { Button } from "@/components/ui/button";
 import { getAllTeams, getTeamBySlug } from "@/lib/content";
@@ -186,6 +186,36 @@ export default async function TymDetailPage({ params }: Props) {
               </li>
             ))}
           </ul>
+        </Section>
+      ) : null}
+
+      {frontmatter.membershipFee ? (
+        <Section>
+          <SectionHeading
+            eyebrow="Členské příspěvky"
+            title="Příspěvek na pololetí"
+            description=""
+          />
+          <div className="flex flex-col gap-6 rounded-2xl border border-border bg-background p-6 sm:flex-row sm:items-center sm:gap-8 sm:p-8">
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <Wallet className="h-6 w-6" aria-hidden />
+              </div>
+              <p className="font-display text-3xl font-extrabold tabular-nums text-foreground sm:text-4xl">
+                {frontmatter.membershipFee.toLocaleString("cs-CZ")} Kč
+                <span className="ml-2 align-middle text-base font-semibold text-muted-foreground">
+                  / pololetí
+                </span>
+              </p>
+            </div>
+            <div className="max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+              <p>
+                Členský příspěvek pro kategorii {frontmatter.name} se hradí
+                dvakrát za sezónu – vždy na začátku každého pololetí. Platební
+                údaje a termín splatnosti dostanete od trenéra kategorie.
+              </p>              
+            </div>
+          </div>
         </Section>
       ) : null}
 

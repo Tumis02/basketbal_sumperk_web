@@ -5,6 +5,7 @@ ageRange: "14–17 let"
 order: 6
 shortDescription: "Dívčí kategorie zaměřená na řešení pokročilých herních situací."
 hero: "/divky_u17.jpeg"
+membershipFee: 3500
 competitionUrl: "https://cz.basketball/soutez/5441?p=10387"
 ---
 

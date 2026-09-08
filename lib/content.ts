@@ -14,6 +14,7 @@ export type TeamFrontmatter = {
   shortDescription?: string;
   hero?: string;
   competitionUrl?: string;
+  membershipFee?: number;
   coaches?: string[];
   trainingDays?: string[];
 };

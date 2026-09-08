@@ -4,6 +4,7 @@ name: "U15 žáci"
 ageRange: "13–14 let (2012 - 2013)"
 order: 5
 shortDescription: "Chlapecká kategorie zaměřená na herní situace a soutěžní hru."
+membershipFee: 3500
 competitionUrl: "https://cz.basketball/soutez/5518?p=10393"
 ---
 

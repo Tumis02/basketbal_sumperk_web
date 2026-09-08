@@ -5,6 +5,7 @@ ageRange: "6–7 let (2019 - 2020)"
 order: 1
 shortDescription: "Nejmladší kategorie, kde se děti hravou formou seznamují s basketbalem a rozvíjejí všeobecnou pohybovou zdatnost."
 hero: "/pripravka.jpeg"
+membershipFee: 2500
 competitionUrl: ""
 ---
 
